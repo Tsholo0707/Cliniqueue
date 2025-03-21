@@ -1,4 +1,4 @@
-#🏥 Medical Booking System
+# A Medical Booking System 🩺
 
 ## 💉 **Project Overview**
 
