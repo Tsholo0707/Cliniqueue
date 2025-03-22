@@ -1,3 +1,8 @@
+/* Patient.java
+Patient model class
+Author: Tsholofelo Mabidikane
+Date: 21 March 2025
+*/
 package za.ac.cput.domain;
 
 import java.util.Date;
