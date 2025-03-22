@@ -1,3 +1,8 @@
+/* Report.java
+Report model class
+Author: Tsholofelo Mabidikane(230018165)
+Date: 21 March 2025
+*/
 package za.ac.cput.domain;
 
 import java.util.Date;
