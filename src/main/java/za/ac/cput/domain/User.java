@@ -17,7 +17,7 @@ public class User {
     private String userPassword;
     private String userRole;
 
-    protected User(Builder builder){
+    private User(Builder builder){
         this.userIdentityNumber = builder.userIdentityNumber;
         this.userFirstName = builder.userFirstName;
         this.userMiddleName = builder.userMiddleName;
