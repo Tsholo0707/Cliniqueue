@@ -42,6 +42,6 @@ public class ReportFactory {
                 .setDoctor(doctor)
                 .setPatient(patient)
                 .setComments(comments)
-                .build;
+                .build();
     }
 }
