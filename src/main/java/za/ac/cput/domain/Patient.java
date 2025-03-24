@@ -14,7 +14,6 @@ public class Patient {
     private String patientGender;
     private String patientPhoneNumber;
     private Date patientDateOfBirth;
-    private int patientId;
     private String patientAddress;
     private String patientBloodType;
     private String emergencyContact;
@@ -45,10 +44,6 @@ public class Patient {
         return patientDateOfBirth;
     }
 
-    public int getPatientId() {
-        return patientId;
-    }
-
     public String getPatientAddress() {
         return patientAddress;
     }
@@ -69,7 +64,6 @@ public class Patient {
                 ", patientGender='" + patientGender + '\'' +
                 ", patientPhoneNumber='" + patientPhoneNumber + '\'' +
                 ", patientDateOfBirth=" + patientDateOfBirth +
-                ", patientId=" + patientId +
                 ", patientAddress='" + patientAddress + '\'' +
                 ", patientBloodType='" + patientBloodType + '\'' +
                 ", emergencyContact='" + emergencyContact + '\'' +
@@ -83,7 +77,6 @@ public class Patient {
         private String patientGender;
         private String patientPhoneNumber;
         private Date patientDateOfBirth;
-        private int patientId;
         private String patientAddress;
         private String patientBloodType;
         private String emergencyContact;
@@ -113,11 +106,6 @@ public class Patient {
             return this;
         }
 
-        public Builder setPatientId(int patientId) {
-            this.patientId = patientId;
-            return this;
-        }
-
         public Builder setPatientAddress(String patientAddress) {
             this.patientAddress = patientAddress;
             return this;
@@ -139,7 +127,6 @@ public class Patient {
             this.patientGender = patient.getPatientGender();
             this.patientPhoneNumber = patient.getPatientPhoneNumber();
             this.patientDateOfBirth = patient.getPatientDateOfBirth();
-            this.patientId = patient.getPatientId();
             this.patientAddress = patient.getPatientAddress();
             this.patientBloodType = patient.getPatientBloodType();
             this.emergencyContact = patient.getEmergencyContact();

@@ -4,6 +4,7 @@ Author: Agnes Mabusela (230020690)
 Date: 21/03/2025
  */
 
+
 package za.ac.cput.domain;
 
 public class User {
