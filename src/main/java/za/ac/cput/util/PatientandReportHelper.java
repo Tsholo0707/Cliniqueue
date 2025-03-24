@@ -8,7 +8,7 @@ import java.util.Date;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class ReportHelper {
+public class PatientandReportHelper {
 
     public static boolean isNullOrEmpty(String s) {
         if(s.isEmpty() || s == null)
