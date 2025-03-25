@@ -1,9 +1,11 @@
-/* User.java
+/*
+Helper.java
 User model Factory Helper Class
-Author: Agnes Mabusela (230020690)
+Authors: Agnes Mabusela (230020690)
 Date: 21/03/2025
  */
 package za.ac.cput.util;
+import java.time.LocalDateTime;
 import java.util.Arrays;
 import java.util.List;
 import java.util.regex.Matcher;
@@ -62,6 +64,26 @@ public class Helper {
         return matcher.matches();
     }
 
+    public static boolean isValidLastLogin(LocalDateTime lastLogin) {
+        if (lastLogin == null) {
+            return false;
+        }
+        LocalDateTime now = LocalDateTime.now();
+        return !lastLogin.isAfter(now);
+    }
+
+    public static boolean isValidStatus(String status) {
+        if (isNullOrEmpty(status)) {
+            return false;
+        }
+        String[] validStatuses = {"active", "inactive"};
+        for (String validStatus : validStatuses) {
+            if (validStatus.equalsIgnoreCase(status)) {
+                return true;
+            }
+        }
+        return false;
+    }
 
 
     public static boolean isValidAmount(double amount) {
