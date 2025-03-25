@@ -16,8 +16,8 @@ public class Report {
     private String reportContent;
     private String priorityLevel;
     private Date dateReportIssued;
-    //private Doctor doctor;
-    //private Patient patient;
+    private Doctor doctor;
+    private Patient patient;
     private String comments;
 
     private Report(){
@@ -32,8 +32,8 @@ public class Report {
         this.reportContent = builder.reportContent;
         this.priorityLevel = builder.priorityLevel;
         this.dateReportIssued = builder.dateReportIssued;
-        //this.doctor = builder.doctor;
-        //this.patient = builder.patient;
+        this.doctor = builder.doctor;
+        this.patient = builder.patient;
         this.comments = builder.comments;
     }
 
@@ -62,12 +62,12 @@ public class Report {
     public Date getDateReportIssued() {
         return dateReportIssued;
     }
-    //    public Doctor getDoctor() {
-//        return doctor;
-//    }
-//    public Patient getPatient() {
-//        return patient;
-//    }
+        public Doctor getDoctor() {
+        return doctor;
+    }
+    public Patient getPatient() {
+        return patient;
+    }
     public String getComments() {
         return comments;
     }
@@ -82,8 +82,8 @@ public class Report {
                 ", reportContent='" + reportContent + '\'' +
                 ", priorityLevel='" + priorityLevel + '\'' +
                 ", dateReportIssued=" + dateReportIssued +
-                //", doctor=" + doctor + '\'' +
-                //", patient=" + patient + '\'' +
+                ", doctor=" + doctor + '\'' +
+                ", patient=" + patient + '\'' +
                 ", comments='" + comments + '\'' +
                 '}';
     }
@@ -97,8 +97,8 @@ public class Report {
         private String reportContent;
         private String priorityLevel;
         private Date dateReportIssued;
-        //private Doctor doctor;
-        //private Patient patient;
+        private Doctor doctor;
+        private Patient patient;
         private String comments;
 
 
@@ -118,7 +118,7 @@ public class Report {
             this.reportType = reportType;
             return this;
         }
-        public Builder setContent(String reportContent) {
+        public Builder setReportContent(String reportContent) {
             this.reportContent = reportContent;
             return this;
         }
@@ -131,15 +131,15 @@ public class Report {
             return this;
         }
 
-//        public Builder setDoctor(Doctor) {
-//            this.doctor = doctor;
-//            return this;
-//        }
+        public Builder setDoctor(Doctor doctor) {
+            this.doctor = doctor;
+            return this;
+        }
 
-//        public Builder setPatient(Patient) {
-//            this.patient = patient;
-//            return this
-//        }
+        public Builder setPatient(Patient patient) {
+            this.patient = patient;
+            return this;
+        }
 
         public Builder setComments(String comments) {
             this.comments = comments;
@@ -165,4 +165,3 @@ public class Report {
         }
     }
 }
-

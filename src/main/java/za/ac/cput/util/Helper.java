@@ -6,6 +6,8 @@ Date: 21/03/2025
  */
 package za.ac.cput.util;
 import java.time.LocalDateTime;
+import java.util.Arrays;
+import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -82,5 +84,53 @@ public class Helper {
         }
         return false;
     }
+
+
+    public static boolean isValidAmount(double amount) {
+        if (amount <= 0) {
+            System.out.println("Amount should be greater than zero.");
+            return false;
+        }
+        return true;
+    }
+
+    public static boolean isValidPaymentMethod(String paymentMethod) {
+        List<String> validMethods = Arrays.asList("Credit Card", "Debit Card", "EFT", "Mobile payment method");
+        if (!validMethods.contains(paymentMethod)) {
+            System.out.println("Invalid payment method.");
+            return false;
+        }
+        return true;
+    }
+
+
+    public static boolean isValidStatus(String status) {
+        List<String> validStatuses = Arrays.asList("Pending", "Completed", "Failed", "Canceled");
+        if (!validStatuses.contains(status)) {
+            System.out.println("Invalid status. Valid options are: Pending, Completed, Failed, Canceled.");
+            return false;
+        }
+        return true;
+    }
+
+
+
+    public static boolean isValidMessage(String message) {
+        if (message == null || message.trim().isEmpty()) {
+            System.out.println("Message cannot be empty.");
+            return false;
+        }
+        if (message.length() > 500) {
+            System.out.println("Message cannot exceed 500 characters.");
+            return false;
+        }
+        return true;
+    }
+
+
+    public static boolean isValidNotificationId(int notificationId) {
+        return notificationId > 0;
+    }
+
 
 }
