@@ -1,4 +1,5 @@
-/* User.java
+/*
+User.java
 User model class
 Author: Agnes Mabusela (230020690)
 Date: 21/03/2025
@@ -18,7 +19,11 @@ public class User {
     private String userPassword;
     private String userRole;
 
-    private User(Builder builder){
+    protected User(){
+
+    }
+
+    protected User(Builder builder){
         this.userIdentityNumber = builder.userIdentityNumber;
         this.userFirstName = builder.userFirstName;
         this.userMiddleName = builder.userMiddleName;
