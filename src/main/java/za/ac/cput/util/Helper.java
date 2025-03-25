@@ -149,5 +149,14 @@ public class Helper {
         return notificationId > 0;
     }
 
+    
+    public static boolean isValidDateOfBirth(Date dateOfBirth) {
+        if(dateOfBirth == null) {
+            return false; // Invalid if null
+        }
+        Date today = new Date(); // Current date
+        return !dateOfBirth.after(today); // Returns true if DOB is in the future (invalid)
+    }
+
 
 }
