@@ -11,6 +11,7 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import java.time.LocalDateTime;
 
 public class Helper {
 
@@ -52,8 +53,8 @@ public class Helper {
         Matcher matcher = pattern.matcher(password);
         return matcher.matches();
     }
-    public static boolean isValidPhoneNumber(String phoneNumber){
-        if(isNullOrEmpty(phoneNumber)){
+    public static boolean isValidPhoneNumber(String phoneNumber) {
+        if (isNullOrEmpty(phoneNumber)) {
             return false;
         }
 
@@ -62,6 +63,22 @@ public class Helper {
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(phoneNumber);
         return matcher.matches();
+    }
+    // Validation for Availability
+    public static boolean isValidAvailability(LocalDateTime dateTime) {
+        return dateTime != null && dateTime.isAfter(LocalDateTime.now());
+    }
+
+    // Validation for Appointments
+    public static boolean isValidAppointment(LocalDateTime dateTime, String status) {
+        return dateTime != null && dateTime.isAfter(LocalDateTime.now()) &&
+                (status.equalsIgnoreCase("Scheduled") ||
+                        status.equalsIgnoreCase("Completed") ||
+                        status.equalsIgnoreCase("Cancelled"));
+    }
+       // Validation for Generic Date-Time
+       public static boolean isValidDateTime(LocalDateTime dateTime) {
+             return dateTime != null && dateTime.isAfter(LocalDateTime.now());
     }
 
     public static boolean isValidLastLogin(LocalDateTime lastLogin) {
