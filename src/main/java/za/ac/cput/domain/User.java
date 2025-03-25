@@ -29,6 +29,9 @@ public class User {
         this.userRole = builder.userRole;
     }
 
+    public User(Admin.Builder builder) {
+    }
+
     public String getUserIdentityNumber() {
         return userIdentityNumber;
     }
