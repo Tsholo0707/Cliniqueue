@@ -1,8 +1,10 @@
-/* User.java
+/*
+UserFactory.java
 User model Factory class
 Author: Agnes Mabusela (230020690)
 Date: 21/03/2025
  */
+
 package za.ac.cput.factory;
 
 import za.ac.cput.domain.User;
