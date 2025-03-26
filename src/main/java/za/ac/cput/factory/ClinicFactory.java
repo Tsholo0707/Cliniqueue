@@ -9,7 +9,7 @@ import java.util.List;
 /**
  * Factory class for creating Clinic objects.
  * Author: Samkelisiwe Khanyile (222843152)
- * Date: 21/03/2025
+ * Date: 25/03/2025
  */
 public class ClinicFactory {
 
