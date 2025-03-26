@@ -1,12 +1,17 @@
-/* User.java
+/*
+Helper.java
 User model Factory Helper Class
-Author: Agnes Mabusela (230020690)
+Authors: Agnes Mabusela (230020690)
 Date: 21/03/2025
  */
 package za.ac.cput.util;
+import java.time.LocalDateTime;
+import java.util.Arrays;
+import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import java.time.LocalDateTime;
 
 public class Helper {
 
@@ -48,8 +53,8 @@ public class Helper {
         Matcher matcher = pattern.matcher(password);
         return matcher.matches();
     }
-    public static boolean isValidPhoneNumber(String phoneNumber){
-        if(isNullOrEmpty(phoneNumber)){
+    public static boolean isValidPhoneNumber(String phoneNumber) {
+        if (isNullOrEmpty(phoneNumber)) {
             return false;
         }
 
@@ -58,6 +63,99 @@ public class Helper {
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(phoneNumber);
         return matcher.matches();
+    }
+    // Validation for Availability
+    public static boolean isValidAvailability(LocalDateTime dateTime) {
+        return dateTime != null && dateTime.isAfter(LocalDateTime.now());
+    }
+
+    // Validation for Appointments
+    public static boolean isValidAppointment(LocalDateTime dateTime, String status) {
+        return dateTime != null && dateTime.isAfter(LocalDateTime.now()) &&
+                (status.equalsIgnoreCase("Scheduled") ||
+                        status.equalsIgnoreCase("Completed") ||
+                        status.equalsIgnoreCase("Cancelled"));
+    }
+       // Validation for Generic Date-Time
+       public static boolean isValidDateTime(LocalDateTime dateTime) {
+             return dateTime != null && dateTime.isAfter(LocalDateTime.now());
+    }
+
+    public static boolean isValidLastLogin(LocalDateTime lastLogin) {
+        if (lastLogin == null) {
+            return false;
+        }
+        LocalDateTime now = LocalDateTime.now();
+        return !lastLogin.isAfter(now);
+    }
+
+    public static boolean isValidStatus(String status) {
+        if (isNullOrEmpty(status)) {
+            return false;
+        }
+        String[] validStatuses = {"active", "inactive"};
+        for (String validStatus : validStatuses) {
+            if (validStatus.equalsIgnoreCase(status)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+
+    public static boolean isValidAmount(double amount) {
+        if (amount <= 0) {
+            System.out.println("Amount should be greater than zero.");
+            return false;
+        }
+        return true;
+    }
+
+    public static boolean isValidPaymentMethod(String paymentMethod) {
+        List<String> validMethods = Arrays.asList("Credit Card", "Debit Card", "EFT", "Mobile payment method");
+        if (!validMethods.contains(paymentMethod)) {
+            System.out.println("Invalid payment method.");
+            return false;
+        }
+        return true;
+    }
+
+
+    public static boolean isValidStatus(String status) {
+        List<String> validStatuses = Arrays.asList("Pending", "Completed", "Failed", "Canceled");
+        if (!validStatuses.contains(status)) {
+            System.out.println("Invalid status. Valid options are: Pending, Completed, Failed, Canceled.");
+            return false;
+        }
+        return true;
+    }
+
+
+
+    public static boolean isValidMessage(String message) {
+        if (message == null || message.trim().isEmpty()) {
+            System.out.println("Message cannot be empty.");
+            return false;
+        }
+        if (message.length() > 500) {
+            System.out.println("Message cannot exceed 500 characters.");
+            return false;
+        }
+        return true;
+    }
+
+
+    public static boolean isValidNotificationId(int notificationId) {
+        return notificationId > 0;
+    }
+
+    
+    public static boolean isValidDateOfBirth(Date dateOfBirth) {
+        if(dateOfBirth == null) {
+            return false; // Invalid if null
+        }
+        Date today = new Date(); // Current date
+        return !dateOfBirth.after(today); // Returns true if DOB is in the future (invalid)
     }
 
 
