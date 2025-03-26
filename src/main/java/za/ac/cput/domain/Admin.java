@@ -1,4 +1,5 @@
-/* Admin.java
+/*
+Admin.java
 Admin model class
 Author: Agnes Mabusela (230020690)
 Date: 22/03/2025
@@ -14,7 +15,7 @@ public class Admin extends User {
     private LocalDateTime lastLogin;
     private String status;
 
-    private Admin(Builder builder) {
+    protected Admin(Builder builder) {
         super(builder);
         this.lastLogin = builder.lastLogin;
         this.status = builder.status;
@@ -51,54 +52,6 @@ public class Admin extends User {
             return this;
         }
 
-        @Override
-        public Builder setUserIdentityNumber(String userIdentityNumber) {
-            super.setUserIdentityNumber(userIdentityNumber);
-            return this;
-        }
-
-        @Override
-        public Builder setUserFirstName(String userFirstName) {
-            super.setUserFirstName(userFirstName);
-            return this;
-        }
-
-        @Override
-        public Builder setUserMiddleName(String userMiddleName) {
-            super.setUserMiddleName(userMiddleName);
-            return this;
-        }
-
-        @Override
-        public Builder setUserLastName(String userLastName) {
-            super.setUserLastName(userLastName);
-            return this;
-        }
-
-        @Override
-        public Builder setUserPhoneNumber(String userPhoneNumber) {
-            super.setUserPhoneNumber(userPhoneNumber);
-            return this;
-        }
-
-        @Override
-        public Builder setUserEmail(String userEmail) {
-            super.setUserEmail(userEmail);
-            return this;
-        }
-
-        @Override
-        public Builder setUserPassword(String userPassword) {
-            super.setUserPassword(userPassword);
-            return this;
-        }
-
-        @Override
-        public Builder setUserRole(String userRole) {
-            super.setUserRole(userRole);
-            return this;
-        }
-
         public Builder copy(Admin admin) {
             super.copy(admin);
             this.lastLogin = admin.getLastLogin();
@@ -106,6 +59,7 @@ public class Admin extends User {
             return this;
         }
 
+        @Override
         public Admin build() {
             return new Admin(this);
         }

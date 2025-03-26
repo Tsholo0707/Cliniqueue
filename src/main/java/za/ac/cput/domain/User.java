@@ -1,8 +1,10 @@
-/* User.java
+/*
+User.java
 User model class
 Author: Agnes Mabusela (230020690)
 Date: 21/03/2025
  */
+
 
 package za.ac.cput.domain;
 
@@ -17,6 +19,10 @@ public class User {
     private String userPassword;
     private String userRole;
 
+    protected User(){
+
+    }
+
     protected User(Builder builder){
         this.userIdentityNumber = builder.userIdentityNumber;
         this.userFirstName = builder.userFirstName;
@@ -26,6 +32,9 @@ public class User {
         this.userEmail = builder.userEmail;
         this.userPassword = builder.userPassword;
         this.userRole = builder.userRole;
+    }
+
+    public User(Admin.Builder builder) {
     }
 
     public String getUserIdentityNumber() {
