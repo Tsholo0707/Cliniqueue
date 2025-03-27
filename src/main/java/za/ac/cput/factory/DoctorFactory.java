@@ -1,37 +1,34 @@
+/*
+DoctorFactory.java
+Doctor model Factory class
+Author: Samkelisiwe Sithabile Khanyile
+Date: 27 March 2025
+*/
+
 package za.ac.cput.factory;
 
 import za.ac.cput.domain.Doctor;
 import za.ac.cput.util.Helper;
 
-/**
- * Factory class for creating Doctor objects.
- * Author: Samkelisiwe Khanyile (222843152)
- * Date: 25/03/2025
- */
 public class DoctorFactory {
 
+    public static Doctor createDoctor(String doctorId, String firstName, String lastName, String specialization, String phoneNumber, String email) {
+        if (Helper.isNullOrEmpty(doctorId) || Helper.isNullOrEmpty(firstName) || Helper.isNullOrEmpty(lastName) || Helper.isNullOrEmpty(specialization))
+            return null;
 
-    public static Doctor createDoctor(String doctorId, String firstName,
-                                      String lastName, String specialization,
-                                      String phoneNumber) {
+        if (!Helper.isValidPhoneNumber(phoneNumber))
+            return null;
 
-        // Validate inputs
-        if (Helper.isNullOrEmpty(firstName) || Helper.isNullOrEmpty(lastName) ||
-                Helper.isNullOrEmpty(specialization)) {
-            return null; // Invalid first name, last name, or specialization
-        }
+        if (!Helper.isValidEmail(email))
+            return null;
 
-        if (!Helper.isValidPhoneNumber(phoneNumber)) {
-            return null; // Invalid phone number
-        }
-
-        // Build and return the Doctor instance
         return new Doctor.Builder()
                 .setDoctorId(doctorId)
                 .setFirstName(firstName)
                 .setLastName(lastName)
-                .setSpecialization(specialization)
+                .setSpecialization(specialization) // Ensure this method exists in Doctor.Builder
                 .setPhoneNumber(phoneNumber)
+                .setEmail(email)
                 .build();
     }
-}
+    }
