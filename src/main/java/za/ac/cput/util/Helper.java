@@ -154,10 +154,10 @@ public class Helper {
     
     public static boolean isValidDateOfBirth(LocalDate dateOfBirth) {
         if(dateOfBirth == null) {
-            return false; // Invalid if null
+            return false;
         }
-        LocalDate today = LocalDate.now(); // Current date
-        return !dateOfBirth.isAfter(today); // Returns false if DOB is in the future (invalid)
+        LocalDate today = LocalDate.now();
+        return !dateOfBirth.isAfter(today);
     }
 
 }

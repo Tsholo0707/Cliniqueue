@@ -1,9 +1,9 @@
-/* AdminFactory.java
+/*
+AdminFactory.java
 Author: Agnes Mabusela (230020690)
 Date: 25/03/2025
- */
+*/
 package za.ac.cput.factory;
-
 
 import za.ac.cput.domain.Admin;
 import za.ac.cput.domain.User;
@@ -22,6 +22,7 @@ public class AdminFactory {
         User user = UserFactory.createUser(userIdentityNumber, userFirstName, userMiddleName,
                 userLastName, userPhoneNumber, userEmail, userPassword, userRole);
 
+
         if (user == null) {
             return null;
         }
@@ -34,7 +35,8 @@ public class AdminFactory {
             return null;
         }
 
-        return new Admin.Builder().copy(user)
+        return new Admin.Builder()
+                .copy((Admin) user)
                 .setLastLogin(lastLogin)
                 .setStatus(status)
                 .build();

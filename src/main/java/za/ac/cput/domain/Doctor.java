@@ -7,7 +7,7 @@ Date: 27 March 2025
 
 package za.ac.cput.domain;
 
-public class Doctor {
+public class Doctor extends User {
 
     private final String doctorId;
     private final String firstName;
@@ -15,7 +15,7 @@ public class Doctor {
     private final String specialization;
     private final String phoneNumber;
     private final String email;
-    private final Clinic clinic; // Association with Clinic
+    private final Clinic clinic;
 
     private Doctor(Builder builder) {
         this.doctorId = builder.doctorId;
