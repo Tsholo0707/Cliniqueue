@@ -6,31 +6,33 @@ Date: 23 March 2025
 package za.ac.cput.factory;
 
 import za.ac.cput.domain.Patient;
-import za.ac.cput.util.ReportHelper;
-import java.util.Date;
+import za.ac.cput.util.Helper;
+import java.time.LocalDate;
+
+
 
 public class PatientFactory {
 
     public static Patient createPatient(String patientFirstName, String patientLastName, String patientGender,
-                                        String patientPhoneNumber, Date patientDateOfBirth,String patientAddress,
-                                        String patientBloodType,String emergencyContact) {
+                                        String patientPhoneNumber, LocalDate patientDateOfBirth, String patientAddress,
+                                        String patientBloodType, String emergencyContact) {
 
-        if(ReportHelper.isNullOrEmpty(patientFirstName) || ReportHelper.isNullOrEmpty(patientLastName))
+        if(Helper.isNullOrEmpty(patientFirstName) || Helper.isNullOrEmpty(patientLastName))
             return null;
 
-        if(ReportHelper.isNullOrEmpty(patientGender))
+        if(Helper.isNullOrEmpty(patientGender))
             return null;
 
-        if(ReportHelper.isValidPhoneNumber(patientPhoneNumber))
+        if(Helper.isValidPhoneNumber(patientPhoneNumber))
             return null;
 
-        if(ReportHelper.isValidDateOfBirth(patientDateOfBirth))
+        if(Helper.isValidDateOfBirth(patientDateOfBirth))
             return null;
 
-        if(ReportHelper.isNullOrEmpty(patientAddress) || ReportHelper.isNullOrEmpty(patientBloodType))
+        if(Helper.isNullOrEmpty(patientAddress) || Helper.isNullOrEmpty(patientBloodType))
             return null;
 
-        if(ReportHelper.isNullOrEmpty(emergencyContact))
+        if(Helper.isNullOrEmpty(emergencyContact))
             return null;
 
         return new Patient.Builder()

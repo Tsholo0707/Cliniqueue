@@ -13,6 +13,7 @@ import java.time.LocalDateTime;
  * Description: Factory class for creating Availability objects with validations.
  */
 
+
 public class AvailabilityFactory {
 
     public static Availability createAvailability(Doctor doctor, LocalDateTime dateTime, boolean isAvailable) {

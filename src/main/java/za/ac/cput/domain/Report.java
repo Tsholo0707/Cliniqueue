@@ -5,17 +5,18 @@ Date 21 March 2025
 */
 package za.ac.cput.domain;
 
-import java.util.Date;
+import java.time.LocalDate;
+
 
 public class Report {
 
     //private ArrayList<Appointment> appointmentList;
     private String medicalHistory;
-    private int reportId;
+    private String reportId;
     private String reportType;
     private String reportContent;
     private String priorityLevel;
-    private Date dateReportIssued;
+    private LocalDate dateReportIssued;
     private Doctor doctor;
     private Patient patient;
     private String comments;
@@ -45,7 +46,7 @@ public class Report {
         return medicalHistory;
     }
 
-    public int getReportId() {
+    public String getReportId() {
         return reportId;
     }
 
@@ -59,7 +60,7 @@ public class Report {
     public String getPriorityLevel() {
         return priorityLevel;
     }
-    public Date getDateReportIssued() {
+    public LocalDate getDateReportIssued() {
         return dateReportIssued;
     }
         public Doctor getDoctor() {
@@ -92,11 +93,11 @@ public class Report {
 
         //private String appointmentList;
         private String medicalHistory;
-        private int reportId;
+        private String reportId;
         private String reportType;
         private String reportContent;
         private String priorityLevel;
-        private Date dateReportIssued;
+        private LocalDate dateReportIssued;
         private Doctor doctor;
         private Patient patient;
         private String comments;
@@ -110,7 +111,7 @@ public class Report {
             this.medicalHistory = medicalHistory;
             return this;
         }
-        public Builder setReportId(int reportId) {
+        public Builder setReportId(String reportId) {
             this.reportId = reportId;
             return this;
         }
@@ -126,7 +127,7 @@ public class Report {
             this.priorityLevel = priorityLevel;
             return this;
         }
-        public Builder setDateReportIssued(Date dateReportIssued) {
+        public Builder setDateReportIssued(LocalDate dateReportIssued) {
             this.dateReportIssued = dateReportIssued;
             return this;
         }
