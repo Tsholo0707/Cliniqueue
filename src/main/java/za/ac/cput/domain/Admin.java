@@ -3,17 +3,17 @@ Admin.java
 Admin model class
 Author: Agnes Mabusela (230020690)
 Date: 22/03/2025
- */
+*/
 
 package za.ac.cput.domain;
 
 import java.time.LocalDateTime;
 
-
 public class Admin extends User {
 
     private LocalDateTime lastLogin;
     private String status;
+
 
     protected Admin(Builder builder) {
         super(builder);
@@ -38,9 +38,11 @@ public class Admin extends User {
                 '}';
     }
 
+
     public static class Builder extends User.Builder {
         private LocalDateTime lastLogin;
         private String status;
+
 
         public Builder setLastLogin(LocalDateTime lastLogin) {
             this.lastLogin = lastLogin;
