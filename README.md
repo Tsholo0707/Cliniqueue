@@ -13,4 +13,5 @@ We are a group of five girls, working together to develop the Medical Booking Sy
 - **Palesa Mabidikane, 230018165** 
 - **Agnes Mabusela, 230020690** 
 
-#Attach Completed UML Class Diagram Here
+![Screenshot](src/assets/images/UML.png)
+
