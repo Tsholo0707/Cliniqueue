@@ -6,11 +6,13 @@ Date 21 March 2025
 package za.ac.cput.domain;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class Report {
 
-    //private ArrayList<Appointment> appointmentList;
+    private ArrayList<Appointment> appointmentList;
     private String medicalHistory;
     private String reportId;
     private String reportType;
@@ -21,12 +23,12 @@ public class Report {
     private Patient patient;
     private String comments;
 
-    private Report(){
+    protected Report(){
     }
 
-    private Report(Builder builder){
+    protected Report(Builder builder){
 
-        //this.appointmentList = builder.appointmentList;
+        this.appointmentList = builder.build().getAppointmentList();
         this.medicalHistory = builder.medicalHistory;
         this.reportId = builder.reportId;
         this.reportType = builder.reportType;
@@ -38,9 +40,8 @@ public class Report {
         this.comments = builder.comments;
     }
 
-//    public String getAppointmentList() {
-//        return appointmentList;
-//    }
+    public ArrayList<Appointment> getAppointmentList() { return appointmentList;
+    }
 
     public String getMedicalHistory() {
         return medicalHistory;
@@ -76,7 +77,7 @@ public class Report {
     @Override
     public String toString() {
         return "Report{" +
-                //", appointmentList=' " + appointmentList + '\'' +
+                ", appointmentList=' " + appointmentList + '\'' +
                 ", medicalHistory='" + medicalHistory + '\'' +
                 ", reportId=" + reportId +
                 ", reportType='" + reportType + '\'' +
@@ -91,7 +92,7 @@ public class Report {
 
     public static class Builder {
 
-        //private String appointmentList;
+        private List<Appointment> appointmentList;
         private String medicalHistory;
         private String reportId;
         private String reportType;
@@ -103,10 +104,10 @@ public class Report {
         private String comments;
 
 
-        //        public Builder setAppointmentList(String appointmentList) {
-//            this.appointmentList = appointmentList;
-//            return this;
-//        }
+        public Builder setAppointmentList(ArrayList<Appointment> appointmentList) {
+            this.appointmentList = appointmentList;
+            return this;
+        }
         public Builder setMedicalHistory(String medicalHistory) {
             this.medicalHistory = medicalHistory;
             return this;
@@ -148,15 +149,15 @@ public class Report {
         }
 
         public Builder copy(Report report){
-            //this.appointmentList = report.appointmentList;
+            this.appointmentList = report.appointmentList;
             this.medicalHistory = report.medicalHistory;
             this.reportId = report.reportId;
             this.reportType = report.reportType;
             this.reportContent = report.reportContent;
             this.priorityLevel = report.priorityLevel;
             this.dateReportIssued = report.dateReportIssued;
-            //this.doctor = report.doctor;
-            //this.patient = report.patient;
+            this.doctor = report.doctor;
+            this.patient = report.patient;
             this.comments = report.comments;
             return this;
         }
