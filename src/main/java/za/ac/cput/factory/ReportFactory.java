@@ -8,22 +8,23 @@ package za.ac.cput.factory;
 import za.ac.cput.domain.Patient;
 import za.ac.cput.domain.Report;
 import za.ac.cput.domain.Doctor;
-import za.ac.cput.util.ReportHelper;
-import java.util.Date;
+import za.ac.cput.util.Helper;
+import java.time.LocalDate;
+
 
 public class ReportFactory {
 
     public static Report createReport(String medicalHistory, String reportId, String reportType,
-                                      String reportContent, String priorityLevel, Date dateReportIssued,
-                                      Doctor doctor, Patient patient, String comments) {
+                                      String reportContent, String priorityLevel, LocalDate dateReportIssued,
+                                       Doctor doctor, Patient patient, String comments) {
 
-        if(ReportHelper.isNullOrEmpty(medicalHistory) || ReportHelper.isNullOrEmpty(reportId))
+        if(Helper.isNullOrEmpty(medicalHistory) || Helper.isNullOrEmpty(reportId))
             return null;
 
-        if(ReportHelper.isNullOrEmpty(reportType) || ReportHelper.isNullOrEmpty(reportContent))
+        if(Helper.isNullOrEmpty(reportType) || Helper.isNullOrEmpty(reportContent))
             return null;
 
-        if(ReportHelper.isNullOrEmpty(priorityLevel) || ReportHelper.isNullOrEmpty(comments))
+        if(Helper.isNullOrEmpty(priorityLevel) || Helper.isNullOrEmpty(comments))
             return null;
 
         if(dateReportIssued == null)
@@ -34,7 +35,7 @@ public class ReportFactory {
 
         return new Report.Builder()
                 .setMedicalHistory(medicalHistory)
-                .setReportId(Integer.parseInt(reportId))
+                .setReportId(reportId)
                 .setReportType(reportType)
                 .setReportContent(reportContent)
                 .setPriorityLevel(priorityLevel)
