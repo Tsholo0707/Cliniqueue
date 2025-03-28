@@ -123,7 +123,7 @@ public class Helper {
     }
 
 
-    public static boolean isValidStatus(String status) {
+    public static boolean isValidTransactionStatus(String status) {
         List<String> validStatuses = Arrays.asList("Pending", "Completed", "Failed", "Canceled");
         if (!validStatuses.contains(status)) {
             System.out.println("Invalid status. Valid options are: Pending, Completed, Failed, Canceled.");
@@ -159,6 +159,5 @@ public class Helper {
         LocalDate today = LocalDate.now(); // Current date
         return !dateOfBirth.isAfter(today); // Returns false if DOB is in the future (invalid)
     }
-
 
 }
