@@ -2,9 +2,8 @@
 Author: Agnes Mabusela (230020690)
 Date: 25/03/2025
  */
-
-
 package za.ac.cput.factory;
+
 
 import za.ac.cput.domain.Admin;
 import za.ac.cput.domain.User;

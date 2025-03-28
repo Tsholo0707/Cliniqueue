@@ -14,6 +14,7 @@ import java.time.LocalDateTime;
  * Description: Factory class for creating Appointment objects with validations.
  */
 
+
 public class AppointmentFactory {
 
     public static Appointment createAppointment(Doctor doctor, Patient patient, LocalDateTime dateTime, String status) {

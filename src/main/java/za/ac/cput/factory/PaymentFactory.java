@@ -6,6 +6,7 @@ import za.ac.cput.domain.Payment;
 import za.ac.cput.domain.Patient;
 import za.ac.cput.util.Helper;
 
+
 public class PaymentFactory {
     public static Payment createPayment(int paymentId, Patient patient, double amount, String paymentMethod, String status) {
         if (paymentId <= 0) {
