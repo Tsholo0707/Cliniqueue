@@ -40,7 +40,7 @@ public class UserRepository implements IUserRepository {
     @Override
     public User read(String userIdentityNumber) {
         for (User user : userList){
-            if (user.getUserIdentityNumber().equals(user))
+            if (user.getUserIdentityNumber().equals(userIdentityNumber))
                 return user;
         }
         return null;
@@ -66,7 +66,7 @@ public class UserRepository implements IUserRepository {
     @Override
     public boolean delete(String id) {
         User userToDelete = read(id);
-        if(userToDelete != null){
+        if(userToDelete == null){
             return false;
         }
         return(userList.remove(userToDelete));
@@ -74,6 +74,6 @@ public class UserRepository implements IUserRepository {
 
     @Override
     public List<User> getAll() {
-        return employeeList;
+        return userList;
     }
 }
