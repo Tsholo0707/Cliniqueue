@@ -1,5 +1,4 @@
-/* UserRepository.java
-Admin model class
+/* UserRepositoryTest.java
 Author: Agnes Mabusela (230020690)
 Date: 26/03/2025
  */
