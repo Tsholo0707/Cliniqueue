@@ -1,20 +1,28 @@
+/*
+Clinic.java
+Clinic model class
+Author: Samkelisiwe Sithabile Khanyile
+Date: 27 March 2025
+*/
+
 package za.ac.cput.domain;
 
-import java.util.List;
-
 public class Clinic {
-    private String clinicId;
-    private String clinicName;
-    private String clinicAddress;
-    private String clinicPhoneNumber;
-    private List<Doctor> doctors;
+
+    private final String clinicId;
+    private final String clinicName;
+    private final String clinicAddress;
+    private final String clinicPhoneNumber;
+    private final String clinicEmail;
+    private final String clinicType;
 
     private Clinic(Builder builder) {
         this.clinicId = builder.clinicId;
         this.clinicName = builder.clinicName;
         this.clinicAddress = builder.clinicAddress;
         this.clinicPhoneNumber = builder.clinicPhoneNumber;
-        this.doctors = builder.doctors;
+        this.clinicEmail = builder.clinicEmail;
+        this.clinicType = builder.clinicType;
     }
 
     public String getClinicId() {
@@ -33,8 +41,12 @@ public class Clinic {
         return clinicPhoneNumber;
     }
 
-    public List<Doctor> getDoctors() {
-        return doctors;
+    public String getClinicEmail() {
+        return clinicEmail;
+    }
+
+    public String getClinicType() {
+        return clinicType;
     }
 
     @Override
@@ -44,7 +56,8 @@ public class Clinic {
                 ", clinicName='" + clinicName + '\'' +
                 ", clinicAddress='" + clinicAddress + '\'' +
                 ", clinicPhoneNumber='" + clinicPhoneNumber + '\'' +
-                ", doctors=" + doctors +
+                ", clinicEmail='" + clinicEmail + '\'' +
+                ", clinicType='" + clinicType + '\'' +
                 '}';
     }
 
@@ -53,7 +66,8 @@ public class Clinic {
         private String clinicName;
         private String clinicAddress;
         private String clinicPhoneNumber;
-        private List<Doctor> doctors;
+        private String clinicEmail;
+        private String clinicType;
 
         public Builder setClinicId(String clinicId) {
             this.clinicId = clinicId;
@@ -75,8 +89,23 @@ public class Clinic {
             return this;
         }
 
-        public Builder setDoctors(List<Doctor> doctors) {
-            this.doctors = doctors;
+        public Builder setClinicEmail(String clinicEmail) {
+            this.clinicEmail = clinicEmail;
+            return this;
+        }
+
+        public Builder setClinicType(String clinicType) {
+            this.clinicType = clinicType;
+            return this;
+        }
+
+        public Builder copy(Clinic clinic) {
+            this.clinicId = clinic.clinicId;
+            this.clinicName = clinic.clinicName;
+            this.clinicAddress = clinic.clinicAddress;
+            this.clinicPhoneNumber = clinic.clinicPhoneNumber;
+            this.clinicEmail = clinic.clinicEmail;
+            this.clinicType = clinic.clinicType;
             return this;
         }
 

@@ -7,7 +7,7 @@ package za.ac.cput.domain;
 
 import java.util.Date;
 
-public class Patient {
+public class Patient extends User{
 
     private String patientFirstName;
     private String patientLastName;

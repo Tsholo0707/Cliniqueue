@@ -1,93 +1,125 @@
+/*
+Doctor.java
+Doctor model class
+Author: Samkelisiwe Sithabile Khanyile
+Date: 27 March 2025
+*/
+
 package za.ac.cput.domain;
 
 public class Doctor {
-    private String doctorId;
-    private String doctorFirstName;
-    private String doctorLastName;
-    private String doctorSpecialization;
-    private String doctorPhoneNumber;
-    private String doctorEmail;
+
+    private final String doctorId;
+    private final String firstName;
+    private final String lastName;
+    private final String specialization;
+    private final String phoneNumber;
+    private final String email;
+    private final Clinic clinic; // Association with Clinic
 
     private Doctor(Builder builder) {
         this.doctorId = builder.doctorId;
-        this.doctorFirstName = builder.doctorFirstName;
-        this.doctorLastName = builder.doctorLastName;
-        this.doctorSpecialization = builder.doctorSpecialization;
-        this.doctorPhoneNumber = builder.doctorPhoneNumber;
-        this.doctorEmail = builder.doctorEmail;
+        this.firstName = builder.firstName;
+        this.lastName = builder.lastName;
+        this.specialization = builder.specialization;
+        this.phoneNumber = builder.phoneNumber;
+        this.email = builder.email;
+        this.clinic = builder.clinic;
     }
 
     public String getDoctorId() {
         return doctorId;
     }
 
-    public String getDoctorFirstName() {
-        return doctorFirstName;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public String getDoctorLastName() {
-        return doctorLastName;
+    public String getLastName() {
+        return lastName;
     }
 
-    public String getDoctorSpecialization() {
-        return doctorSpecialization;
+    public String getSpecialization() {
+        return specialization;
     }
 
-    public String getDoctorPhoneNumber() {
-        return doctorPhoneNumber;
+    public String getPhoneNumber() {
+        return phoneNumber;
     }
 
-    public String getDoctorEmail() {
-        return doctorEmail;
+    public String getEmail() {
+        return email;
+    }
+
+    public Clinic getClinic() {
+        return clinic;
     }
 
     @Override
     public String toString() {
         return "Doctor{" +
                 "doctorId='" + doctorId + '\'' +
-                ", doctorFirstName='" + doctorFirstName + '\'' +
-                ", doctorLastName='" + doctorLastName + '\'' +
-                ", doctorSpecialization='" + doctorSpecialization + '\'' +
-                ", doctorPhoneNumber='" + doctorPhoneNumber + '\'' +
-                ", doctorEmail='" + doctorEmail + '\'' +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", specialization='" + specialization + '\'' +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                ", email='" + email + '\'' +
+                ", clinic=" + (clinic != null ? clinic.getClinicName() : "None") +
                 '}';
     }
 
     public static class Builder {
         private String doctorId;
-        private String doctorFirstName;
-        private String doctorLastName;
-        private String doctorSpecialization;
-        private String doctorPhoneNumber;
-        private String doctorEmail;
+        private String firstName;
+        private String lastName;
+        private String specialization;
+        private String phoneNumber;
+        private String email;
+        private Clinic clinic;
 
         public Builder setDoctorId(String doctorId) {
             this.doctorId = doctorId;
             return this;
         }
 
-        public Builder setDoctorFirstName(String doctorFirstName) {
-            this.doctorFirstName = doctorFirstName;
+        public Builder setFirstName(String firstName) {
+            this.firstName = firstName;
             return this;
         }
 
-        public Builder setDoctorLastName(String doctorLastName) {
-            this.doctorLastName = doctorLastName;
+        public Builder setLastName(String lastName) {
+            this.lastName = lastName;
             return this;
         }
 
-        public Builder setDoctorSpecialization(String doctorSpecialization) {
-            this.doctorSpecialization = doctorSpecialization;
+        public Builder setSpecialization(String specialization) {
+            this.specialization = specialization;
             return this;
         }
 
-        public Builder setDoctorPhoneNumber(String doctorPhoneNumber) {
-            this.doctorPhoneNumber = doctorPhoneNumber;
+        public Builder setPhoneNumber(String phoneNumber) {
+            this.phoneNumber = phoneNumber;
             return this;
         }
 
-        public Builder setDoctorEmail(String doctorEmail) {
-            this.doctorEmail = doctorEmail;
+        public Builder setEmail(String email) {
+            this.email = email;
+            return this;
+        }
+
+        public Builder setClinic(Clinic clinic) {
+            this.clinic = clinic;
+            return this;
+        }
+
+        public Builder copy(Doctor doctor) {
+            this.doctorId = doctor.doctorId;
+            this.firstName = doctor.firstName;
+            this.lastName = doctor.lastName;
+            this.specialization = doctor.specialization;
+            this.phoneNumber = doctor.phoneNumber;
+            this.email = doctor.email;
+            this.clinic = doctor.clinic;
             return this;
         }
 
