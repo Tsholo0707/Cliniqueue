@@ -10,6 +10,7 @@ package za.ac.cput.factory;
 import za.ac.cput.domain.Doctor;
 import za.ac.cput.util.Helper;
 
+
 public class DoctorFactory {
 
     public static Doctor createDoctor(String doctorId, String firstName, String lastName, String specialization, String phoneNumber, String email) {

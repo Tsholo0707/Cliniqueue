@@ -10,6 +10,7 @@ import za.ac.cput.util.Helper;
 import java.time.LocalDate;
 
 
+
 public class PatientFactory {
 
     public static Patient createPatient(String patientFirstName, String patientLastName, String patientGender,

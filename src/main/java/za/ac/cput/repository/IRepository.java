@@ -1,5 +1,4 @@
 /* IRepository.java
-Admin model class
 Author: Agnes Mabusela (230020690)
 Date: 26/03/2025
  */

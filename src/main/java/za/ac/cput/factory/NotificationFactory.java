@@ -4,6 +4,8 @@ import za.ac.cput.domain.Notification;
 import za.ac.cput.domain.User;
 import za.ac.cput.util.Helper;
 
+
+
 public class NotificationFactory {
     public static Notification createNotification(int notificationId, User sender, User recipient, String message, String status) {
         if (notificationId <= 0) {

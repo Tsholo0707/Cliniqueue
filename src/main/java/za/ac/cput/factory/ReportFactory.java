@@ -12,6 +12,7 @@ import za.ac.cput.util.Helper;
 import java.time.LocalDate;
 
 
+
 public class ReportFactory {
 
     public static Report createReport(String medicalHistory, String reportId, String reportType,
