@@ -1,5 +1,4 @@
 /* AdminFactory.java
-Admin model Factory Helper Class
 Author: Agnes Mabusela (230020690)
 Date: 25/03/2025
  */
