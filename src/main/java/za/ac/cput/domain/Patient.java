@@ -5,7 +5,8 @@ Date 21 March 2025
 */
 package za.ac.cput.domain;
 
-import java.util.Date;
+import java.time.LocalDate;
+
 
 public class Patient extends User{
 
@@ -13,15 +14,16 @@ public class Patient extends User{
     private String patientLastName;
     private String patientGender;
     private String patientPhoneNumber;
-    private Date patientDateOfBirth;
+    private LocalDate patientDateOfBirth;
     private String patientAddress;
     private String patientBloodType;
     private String emergencyContact;
 
-    private Patient() {
+    protected Patient() {
     }
 
-    private Patient(Builder builder) {
+    protected Patient(Builder builder) {
+        super(builder);
     }
 
     public String getPatientFirstName() {
@@ -40,7 +42,7 @@ public class Patient extends User{
         return patientPhoneNumber;
     }
 
-    public Date getPatientDateOfBirth() {
+    public LocalDate getPatientDateOfBirth() {
         return patientDateOfBirth;
     }
 
@@ -70,13 +72,13 @@ public class Patient extends User{
                 '}';
     }
 
-    public static class Builder {
+    public static class Builder extends User.Builder {
 
         private String patientFirstName;
         private String patientLastName;
         private String patientGender;
         private String patientPhoneNumber;
-        private Date patientDateOfBirth;
+        private LocalDate patientDateOfBirth;
         private String patientAddress;
         private String patientBloodType;
         private String emergencyContact;
@@ -101,7 +103,7 @@ public class Patient extends User{
             return this;
         }
 
-        public Builder setPatientDateOfBirth(Date patientDateOfBirth) {
+        public Builder setPatientDateOfBirth(LocalDate patientDateOfBirth) {
             this.patientDateOfBirth = patientDateOfBirth;
             return this;
         }
@@ -122,6 +124,7 @@ public class Patient extends User{
         }
 
         public Builder copy(Patient patient) {
+            super.copy(patient);
             this.patientFirstName = patient.getPatientFirstName();
             this.patientLastName = patient.getPatientLastName();
             this.patientGender = patient.getPatientGender();

@@ -5,8 +5,10 @@ Authors: Agnes Mabusela (230020690)
 Date: 21/03/2025
  */
 package za.ac.cput.util;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Arrays;
+import java.util.Date;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -150,12 +152,12 @@ public class Helper {
     }
 
     
-    public static boolean isValidDateOfBirth(Date dateOfBirth) {
+    public static boolean isValidDateOfBirth(LocalDate dateOfBirth) {
         if(dateOfBirth == null) {
             return false; // Invalid if null
         }
-        Date today = new Date(); // Current date
-        return !dateOfBirth.after(today); // Returns true if DOB is in the future (invalid)
+        LocalDate today = LocalDate.now(); // Current date
+        return !dateOfBirth.isAfter(today); // Returns false if DOB is in the future (invalid)
     }
 
 
